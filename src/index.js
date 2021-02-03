@@ -3,11 +3,28 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+//===============================
+import { createStore } from 'redux';
+import reducer from "../src/redusers/rootReducer";
+import { Provider } from "react-redux";
+//!========My library ================================================================
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.css';
+import 'popper.js/dist/umd/popper';
+import 'jquery/dist/jquery';
+import 'bootstrap/dist/js/bootstrap.min.js';
+
+//!======================================================================================
+
+const store = createStore(reducer)
 
 ReactDOM.render(
+  <Provider store={store}>
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 
